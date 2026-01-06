@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Female Cafeteria Menu - One Page Print</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 5px;
+            background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .menu-container {
+            max-width: 500px; /* Tighter width */
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px; /* Less padding */
+            border-radius: 5px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 36px; /* Smaller */
+            color: rgba(255, 182, 193, 0.1);
+            font-weight: bold;
+            pointer-events: none;
+            z-index: -1;
+        }
+        h1 {
+            text-align: center;
+            color: #C71585;
+            margin-bottom: 10px;
+            font-size: 20px; /* Smaller */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 10px; /* Tighter */
+        }
+        .section h2 {
+            color: #9370DB;
+            border-bottom: 1px solid #FFB6C1;
+            padding-bottom: 2px;
+            font-size: 16px; /* Smaller */
+            margin-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px; /* Smaller */
+        }
+        td {
+            padding: 2px 0; /* Tighter */
+            border-bottom: 1px solid #E6E6FA;
+        }
+        .item {
+            font-weight: bold;
+            color: #333;
+        }
+        .price {
+            text-align: right;
+            color: #C71585;
+            font-weight: bold;
+        }
+        /* Print Styles for A4 - Forced One Page */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 5mm; /* Smaller margins */
+            }
+            body {
+                background: white;
+                margin: 0;
+                padding: 0;
+                -webkit-print-color-adjust: exact; /* Keep colors if possible */
+            }
+            .menu-container {
+                box-shadow: none;
+                background: white;
+                padding: 5px;
+                max-width: none;
+                width: 100%;
+                page-break-before: avoid;
+                page-break-after: avoid;
+            }
+            .watermark {
+                font-size: 24px; /* Very small */
+            }
+            h1 {
+                font-size: 18px;
+            }
+            .section h2 {
+                font-size: 14px;
+            }
+            table {
+                font-size: 10px; /* Very small for fit */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="watermark">Female Cafeteria</div>
+        <h1>Cafeteria Menu</h1>
+        
+        <!-- Menu sections same as before, but compact -->
+        <div class="section">
+            <h2>Breakfast</h2>
+            <table>
+                <tr><td class="item">Chicken Paratha</td><td class="price">Rs. 100</td></tr>
+                <tr><td class="item">Aloo Paratha</td><td class="price">Rs. 70</td></tr>
+                <tr><td class="item">Aloo Gobi Paratha</td><td class="price">Rs. 100</td></tr>
+                <tr><td class="item">Mooli Paratha</td><td class="price">Rs. 100</td></tr>
+                <tr><td class="item">Simple Paratha</td><td class="price">Rs. 50</td></tr>
+                <tr><td class="item">Omelette</td><td class="price">Rs. 50</td></tr>
+                <tr><td class="item">Bread & Shami</td><td class="price">Rs. 100</td></tr>
+                <tr><td class="item">Toasted Bread</td><td class="price">Rs. 100</td></tr>
+                <tr><td class="item">Bread & Omelette</td><td class="price">Rs. 100</td></tr>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>Tea</h2>
+            <table>
+                <tr><td class="item">Chai</td><td class="price">Rs. 60</td></tr>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>Lunch</h2>
+            <table>
+                <tr><td class="item">Chicken Biryani</td><td class="price">Rs. 225</td></tr>
+                <tr><td class="item">Chicken Manchurian</td><td class="price">Rs. 225</td></tr>
+                <tr><td class="item">Masala Kebab</td><td class="price">Rs. 225</td></tr>
+                <tr><td class="item">Kofta Pulao</td><td class="price">Rs. 225</td></tr>
+                <tr><td class="item">Chinese Rice</td><td class="price">Rs. 225</td></tr>
+                <tr><td class="item">Chicken Pulao</td><td class="price">Rs. 225</td></tr>
+                <tr><td class="item">Tikka Biryani</td><td class="price">Rs. 225</td></tr>
+                <tr><td class="item">All types of Daal</td><td class="price">Rs. 90</td></tr>
+                <tr><td class="item">All types of Vegetables</td><td class="price">Rs. 90</td></tr>
+                <tr><td class="item">Dal Chawal</td><td class="price">Rs. 170</td></tr>
+                <tr><td class="item">Kaari Pokra & Chawal</td><td class="price">Rs. 170</td></tr>
+                <tr><td class="item">Masar & Chawal</td><td class="price">Rs. 170</td></tr>
+                <tr><td class="item">Channa & Chawal</td><td class="price">Rs. 170</td></tr>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>Chicken & BBQ</h2>
+            <table>
+                <tr><td class="item">Aloo Kheema</td><td class="price">Rs. 170</td></tr>
+                <tr><td class="item">Chicken Karahi</td><td class="price">Rs. 150</td></tr>
+                <tr><td class="item">Boneless Handi</td><td class="price">Rs. 200</td></tr>
+                <tr><td class="item">Chicken Jalfrezi</td><td class="price">Rs. 170</td></tr>
+                <tr><td class="item">White Korma</td><td class="price">Rs. 180</td></tr>
+                <tr><td class="item">Chapli Kebab</td><td class="price">Rs. 100</td></tr>
+                <tr><td class="item">Kebab</td><td class="price">Rs. 120</td></tr>
+                <tr><td class="item">Malai Boti (6-7 pieces)</td><td class="price">Rs. 300</td></tr>
+                <tr><td class="item">Tikka Boti (6-7 pieces)</td><td class="price">Rs. 300</td></tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
